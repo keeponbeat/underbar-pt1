@@ -31,4 +31,24 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('can use to check object contains null', () => {
+    const ponies = {
+      'pony1': 'Fluttershy',
+      'pony2': null,
+      'pony3': 'Rainbow Dash',
+      'pony4': 'Rarity'
+    };
+    expect(_.contains(ponies, null)).toBe(true);
+  });
+
+  it('can use to check object contains null', () => {
+    const ponies = {
+      'pony1': 'Fluttershy',
+      'pony2': 'Pinkie Pie',
+      'pony3': 'Rainbow Dash',
+      'pony4': 'Rarity'
+    };
+    expect(_.contains(ponies, null)).toBe(false);
+  });
+
 });

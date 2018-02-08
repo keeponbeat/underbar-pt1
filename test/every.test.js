@@ -12,5 +12,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true collectry', () => {
+      const strings = ['one', 'two', 'three', 'four', 'five'];
+      expect(_.every(strings, str => typeof str === 'string')).toBe(true);
+    });
+
+    it('returns false collectry', () => {
+      const strings = ['one', 'two', 'three', 'four', 5];
+      expect(_.every(strings, str => typeof str === 'string')).toBe(false);
+    });   
+
   });
 });

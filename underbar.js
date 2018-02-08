@@ -1,6 +1,6 @@
 // Returns the first n elements of the given array.
 const first = function(array, n = 1) {
-  return n === 1 ? array[0] : array.slice(0, n);
+  return n === 1 ? array[0] : n >= 1 ? array.slice(0, n) : new Error('ERROR: first() - seconde argument must lerger than 1.');
 };
 
 // Returns the last n elements of the given array.

@@ -11,4 +11,13 @@ describe('pluck()', () => {
     expect(result).toEqual([12, 999, 14]);
   });
 
+  it('also works with array', () => {
+    const arrays = [
+      [1, 2, 3],
+      [10,20,30],
+      [100,200,300]
+    ];
+    const result = _.pluck(arrays, 1);
+    expect(result).toEqual([2,20,200]);
+  });
 });

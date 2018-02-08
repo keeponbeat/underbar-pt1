@@ -1,6 +1,7 @@
 const _ = require('../underbar');
 
 describe('isArrayLike()', () => {
+
   it('returns true for an actual array', () => {
     expect(_.isArrayLike([1, 2, 3])).toBe(true);
   });
@@ -17,5 +18,10 @@ describe('isArrayLike()', () => {
       'foo': 'bar'
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
+  });
+
+  it('returns true for an string', () => {
+    const string = 'aiueo';
+    expect(_.isArrayLike(string)).toBe(true);
   });
 });

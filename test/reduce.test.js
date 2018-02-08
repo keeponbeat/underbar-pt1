@@ -13,4 +13,16 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('reduces an array of chars to string, *with* an explicit initial value for the accumulator', () => {
+    const chars = ['a', 'i', 'u', 'e', 'o'];
+    const result = _.reduce(chars, (acc, char) => acc + char, 'the ');
+    expect(result).toEqual('the aiueo');
+  });
+
+  it('reduces an array of chars to string, *without* an explicit initial value for the accumulator', () => {
+    const chars = ['a', 'i', 'u', 'e', 'o'];
+    const result = _.reduce(chars, (a, b) => a + b);
+    expect(result).toEqual('aiueo');
+  });
+
 });

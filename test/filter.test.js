@@ -1,6 +1,7 @@
 const _ = require('../underbar');
 
 describe('filter()', () => {
+
   it('filters an array to odd numbers', () => {
     const nums = [2, 4, 5, 6, 7, 8, 10, 11];
     expect(_.filter(nums, num => num % 2 === 1)).toEqual([5, 7, 11]);
@@ -22,5 +23,23 @@ describe('filter()', () => {
 
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
+  });
+
+  it('filters an object to only values starts with h', () => {
+    const memo = {
+      name: 'Thokul Mongothsbeard',
+      honorific: 'Lord Thokul Mongothsbeard the Arcane',
+      race: 'human',
+      class: 'hybrid',
+      strength: 'low',
+      constitution: '?',
+      dexterity: 'high',
+      intelligence: 'max',
+      wisdom: 'cool',
+      charisma: 'too high'
+    };
+
+    const filteredValues = _.filter(memo, (value) => /^h.*$/.test(value));
+    expect(filteredValues).toEqual(['human', 'hybrid', 'high']);
   });
 });
